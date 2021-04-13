@@ -1,12 +1,7 @@
 ﻿using itvitea_Restaurant.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Configuration;
 using DataProcessor;
 
 namespace itvitea_Restaurant.Controllers
@@ -22,7 +17,6 @@ namespace itvitea_Restaurant.Controllers
 
         public IActionResult Index()
         {
-            Access.setConnectionString(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
             return View();
         }
 

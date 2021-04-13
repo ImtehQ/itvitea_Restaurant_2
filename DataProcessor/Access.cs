@@ -9,18 +9,19 @@ using System.Configuration;
 
 namespace DataProcessor
 {
+
     public class Access
     {
-        static string ConnectionString;
+        private static string _connectionString;
 
         public static void setConnectionString(string _ConnectionString)
         {
-            ConnectionString = _ConnectionString;
+            _connectionString = _ConnectionString;
         }
 
         public static string GetConnectionString()
         {
-            return ConnectionString;
+            return _connectionString;
         }
 
         public static List<T> LoadData<T>(string sql)

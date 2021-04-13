@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using QSS.Attributes;
 
 namespace QSS.sqls
 {
@@ -28,9 +29,10 @@ namespace QSS.sqls
             string returnValue = "";
             for (int i = 0; i < props.Length; i++)
             {
-                if (excludeStrings.Contains(props[i].Name))
+                if (excludeStrings != null && excludeStrings.Contains(props[i].Name))
                     continue;
-
+                if (Attribute.IsDefined(props[i], typeof(DatabaseIgnore)))
+                    continue;
                 returnValue += $"{props[i].Name}, ";
             }
 

@@ -10,7 +10,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DBO\DBO.sqlproj" />
     <ProjectReference Include="..\QSS\QSS.csproj" />
   </ItemGroup>
 

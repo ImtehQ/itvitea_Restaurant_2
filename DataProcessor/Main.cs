@@ -29,12 +29,11 @@ namespace DataProcessor
 
     public static class Connection
     {
-
         public static List<R> ListT<R,D>(D Data, string databaseTable, string[] excludeStrings = null)
         {
             if (Data == null || databaseTable == null || databaseTable.Length == 0)
                 return null;
-            return Access.LoadData<R>($"from dbo.select {SQLs.FormatString(Data.GetType().GetProperties(), excludeStrings)}");
+            return Access.LoadData<R>($"select {SQLs.FormatString(Data.GetType().GetProperties(), excludeStrings)} from {databaseTable}");
         }
 
         public static R One<R, D>(D Data, string databaseTable, string[] excludeStrings = null)
