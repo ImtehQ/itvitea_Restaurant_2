@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 using DataProcessor;
+using System.Collections.Generic;
 
 namespace itvitea_Restaurant.Controllers
 {
@@ -17,6 +18,12 @@ namespace itvitea_Restaurant.Controllers
 
         public IActionResult Index()
         {
+            Order newOrder = new Order();
+
+            var dbreturndata = Connection.List<Order> ("Order");
+            var dbreturndata2 = Connection.Update<Order>(newOrder, "Order", new string[] { "Id" }, new string[] { "0" });
+            var dbreturndata3 = Connection.List("Order");
+
             return View();
         }
 

@@ -17,6 +17,7 @@ namespace itvitea_Restaurant
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
             Access.setConnectionString("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog = Restaurant; Integrated Security = True; Connect Timeout = 60; Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False");
 
         }

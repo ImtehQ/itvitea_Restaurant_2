@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using Dapper;
 using System.Configuration;
+using System.Reflection;
 
 namespace DataProcessor
 {
@@ -29,6 +30,13 @@ namespace DataProcessor
             using (IDbConnection cnn = new SqlConnection(GetConnectionString()))
             {
                 return cnn.Query<T>(sql).ToList();
+            }
+        }
+        public static Dictionary<string, object> LoadData(string sql)
+        {
+            using (IDbConnection cnn = new SqlConnection(GetConnectionString()))
+            {
+                return (Dictionary<string, object>)cnn.Query(sql);
             }
         }
 
@@ -64,5 +72,30 @@ namespace DataProcessor
                 return cnn.Execute(sql);
             }
         }
+
+        //public static void something<C>(C ClassType)
+        //{
+        //    IDbConnection cnn = new SqlConnection(GetConnectionString());
+        //    cnn.Open();
+
+        //    var map = new CustomPropertyTypeMap(typeof(C), (type, columnName)
+        //      => type.GetProperties().FirstOrDefault(prop => GetDescriptionFromAttribute(prop) == columnName.ToLower()));
+        //    Dapper.SqlMapper.SetTypeMap(typeof(C), map);
+
+        //    var sql = "SELECT * FROM Contact_Clients WHERE Contact_Cli_ID = 1234";
+        //    var c = db.QueryFirst<Contact>(sql);
+        //    Console.WriteLine(c.Nom + " " + c.Prenom);
+
+        //    cnn.Close();
+        //    Console.ReadLine();
+        //}
+
+        //static string GetDescriptionFromAttribute(MemberInfo member)
+        //{
+        //    if (member == null) return null;
+
+        //    var attrib = (DescriptionAttribute)Attribute.GetCustomAttribute(member, typeof(DescriptionAttribute), false);
+        //    return (attrib?.Description ?? member.Name).ToLower();
+        //}
     }
 }

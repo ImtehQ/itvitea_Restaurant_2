@@ -7,10 +7,14 @@ using QSS.Attributes;
 
 namespace itvitea_Restaurant.Models
 {
-    public class Orders
+    public class Order
     {
         public int Id { get; set; }
         public int TableId { get; set; }
+        public bool Completed { get; set; }
+
+
+
         [DatabaseIgnore]
         public List<Consumeables> foodIds { get; set; }  // tussentabel
         [DatabaseIgnore]
@@ -18,6 +22,6 @@ namespace itvitea_Restaurant.Models
         [DatabaseIgnore]
         public int totalPrice { get; set; }
 
-        public bool completed { get; set; }
+
     }
 }

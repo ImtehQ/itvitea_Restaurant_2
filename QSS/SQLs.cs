@@ -49,12 +49,14 @@ namespace QSS.sqls
         /// <param name="wheres"></param>
         /// <param name="expectedValue"></param>
         /// <returns></returns>
-        public static string WhereFormat(PropertyInfo[] props, string[] wheres, string[] expectedValue = null)
+        public static string WhereFormat(PropertyInfo[] props, string[] wheres = null, string[] expectedValue = null)
         {
             if (props.ContainsArray(wheres).Contains(false))
                 return "";
             string returnValue = "";
 
+            if (wheres == null)
+                return "";
             if (wheres.Length == 0)
                 return "";
             if (wheres.Length == 1)
