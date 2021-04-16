@@ -19,10 +19,7 @@ namespace itvitea_Restaurant.Controllers
         public IActionResult Index()
         {
             Order newOrder = new Order();
-
-            var dbreturndata = Connection.List<Order> ("Order");
-            var dbreturndata2 = Connection.Update<Order>(newOrder, "Order", new string[] { "Id" }, new string[] { "0" });
-            var dbreturndata3 = Connection.List("Order");
+            Connection.List<Order>("Order");
 
             return View();
         }
