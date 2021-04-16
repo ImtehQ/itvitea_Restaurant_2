@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace QSS.UUC.Modules
+namespace QsScriptExtentions.UnitConverter
 {
     public static class Modules
     {

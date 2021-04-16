@@ -5,9 +5,12 @@ using System.Threading.Tasks;
 
 namespace itvitea_Restaurant.Models
 {
-    public class ConsumeablesOrders
+    public class ConsumeableOrders
     {
         public int consumeableId { get; set; }
         public int orderId { get; set; }
+        public string remarks { get; set; }
+        public double price { get; set; }
+        public bool ready { get; set; }
     }
 }

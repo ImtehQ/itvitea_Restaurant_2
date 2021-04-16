@@ -1,25 +1,26 @@
-﻿using QSS.Array;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using QSS.Attributes;
+using QsScriptExtentions.Arrays;
+using QsScriptExtentions.Attributes;
 
-namespace QSS.sqls
+namespace QsScriptExtentions.SQL
 {
     /// <summary>
     /// This class contains some usefull stuff for sql quarrys 
     /// </summary>
-    public static class SQLs
+    public static class Helper
     {
+
         /// <summary>
-        /// Creates a correct Format for sql quarrys use
+        /// Converts PropertyInfo array to a sql select quarry
         /// </summary>
         /// <param name="props"></param>
         /// <param name="excludeStrings"></param>
         /// <returns></returns>
-        public static string FormatString(PropertyInfo[] props, string[] excludeStrings = null)
+        public static string SelectFormatPropertysInfo(this PropertyInfo[] props, string[] excludeStrings = null)
         {
             if (props == null)
                 return "";
@@ -42,14 +43,15 @@ namespace QSS.sqls
             return returnValue;
         }
 
+
         /// <summary>
-        /// Creates a correct WHERE line for sql quarrys use
+        /// Converts PropertyInfo array to a sql where quarry
         /// </summary>
         /// <param name="props"></param>
         /// <param name="wheres"></param>
         /// <param name="expectedValue"></param>
         /// <returns></returns>
-        public static string WhereFormat(PropertyInfo[] props, string[] wheres = null, string[] expectedValue = null)
+        public static string WhereFormatPropertysInfo(this PropertyInfo[] props, string[] wheres = null, string[] expectedValue = null)
         {
             if (props.ContainsArray(wheres).Contains(false))
                 return "";

@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\QSS\QSS.csproj" />
+    <ProjectReference Include="..\QSS\QsScriptExtentions.csproj" />
   </ItemGroup>
 
 </Project>

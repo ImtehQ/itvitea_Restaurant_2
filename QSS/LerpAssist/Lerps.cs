@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace QSS.Lerp
+namespace QsScriptExtentions.Lerp
 {
     public enum LerpAssistList
     {

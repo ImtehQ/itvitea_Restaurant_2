@@ -1,5 +1,5 @@
-﻿using QSS.sqls;
-using QSS.Attributes;
+﻿using QsScriptExtentions.SQL;
+using QsScriptExtentions.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -60,7 +60,7 @@ namespace DataProcessor
         {
             if (Data == null || databaseTable == null || databaseTable.Length == 0)
                 return null;
-            return Access.LoadData<R>($"select {SQLs.FormatString(Data.GetType().GetProperties(), excludeStrings)} from {databaseTable}");
+            return Access.LoadData<R>($"select {Data.GetType().GetProperties().SelectFormatPropertysInfo(excludeStrings)} from {databaseTable}");
         }
 
         public static R ListOne<R>(string databaseTable, string[] excludeStrings = null)
@@ -82,12 +82,12 @@ namespace DataProcessor
             if(wheres != null && wheres.Length > 0)
                 return Access.ExecuteDataString(
                     $"update dbo.{databaseTable} set " +
-                    $"{SQLs.FormatString(Data.GetType().GetProperties(), excludeStrings)} " +
-                    $"{SQLs.WhereFormat(Data.GetType().GetProperties(), wheres, wheresValues)}");
+                    $"{Data.GetType().GetProperties().SelectFormatPropertysInfo(excludeStrings)} " +
+                    $"{Data.GetType().GetProperties().WhereFormatPropertysInfo(wheres, wheresValues)}");
 
             return Access.ExecuteDataString(
                 $"update dbo.{databaseTable} set " +
-                $"{SQLs.FormatString(Data.GetType().GetProperties(), excludeStrings)} ");
+                $"{Data.GetType().GetProperties().SelectFormatPropertysInfo(excludeStrings)} ");
         }
         public static int Update<D>(D Data, string databaseTable)
         {

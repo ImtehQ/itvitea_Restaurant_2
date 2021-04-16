@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using QSS.sqls;
-using QSS.Attributes;
+using QsScriptExtentions.SQL;
+using QsScriptExtentions.Attributes;
 
 namespace itvitea_Restaurant.Models
 {

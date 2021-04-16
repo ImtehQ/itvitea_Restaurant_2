@@ -1,4 +1,4 @@
-﻿using QSS.Attributes;
+﻿using QsScriptExtentions.Attributes;
 
 namespace itvitea_Restaurant.Models
 {

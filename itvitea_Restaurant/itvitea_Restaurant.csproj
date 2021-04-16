@@ -18,7 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DataProcessor\DataProcessor.csproj" />
-    <ProjectReference Include="..\QSS\QSS.csproj" />
+    <ProjectReference Include="..\QSS\QsScriptExtentions.csproj" />
   </ItemGroup>
 
 </Project>

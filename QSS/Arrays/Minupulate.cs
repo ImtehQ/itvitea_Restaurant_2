@@ -1,14 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 
-namespace QSS.Array
+namespace QsScriptExtentions.Arrays
 {
-    /// <summary>
-    /// This class contains helper functions for arrays
-    /// some might be outdated or can be made better, ow well..
-    /// </summary>
-    public static class Arrays
+    public static class Minupulate
     {
         public static bool[] ContainsArray(this string[] arrayA, string[] arrayB)
         {
@@ -31,9 +29,5 @@ namespace QSS.Array
             }
             return returnArray;
         }
-
     }
-
-
-
 }

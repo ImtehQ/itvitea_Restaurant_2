@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "itvitea_Restaurant", "itvit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataProcessor", "DataProcessor\DataProcessor.csproj", "{7093A648-15DF-4DB2-BAC6-8C09ABE1274A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QSS", "QSS\QSS.csproj", "{ABB0D4B4-B103-4622-B061-5B8755379446}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QsScriptExtentions", "QSS\QsScriptExtentions.csproj", "{ABB0D4B4-B103-4622-B061-5B8755379446}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DBO", "DBO\DBO.sqlproj", "{EAFC8D3C-27C9-47B5-84FF-2537D450ED6E}"
 EndProject

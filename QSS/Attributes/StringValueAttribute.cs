@@ -2,12 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace QSS.Attributes
+namespace QsScriptExtentions.Attributes
 {
-    public class DatabaseIgnore : Attribute
-    {
-
-    }
     public class StringValueAttribute : Attribute
     {
         #region Properties
@@ -20,9 +16,5 @@ namespace QSS.Attributes
             this.StringValue = value;
         }
         #endregion
-    }
-
-    class Attributes
-    {
     }
 }
